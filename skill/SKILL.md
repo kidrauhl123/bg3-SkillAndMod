@@ -1,6 +1,6 @@
 ---
 name: bg3-weapon-mod-lessons
-description: Capture and apply concise, verified lessons for Baldur's Gate 3 original-weapon mods, especially root templates, Script Extender grants, package layout, appearance reuse, reusable weapon-index caching, and inventory verification. Use when creating, debugging, or documenting a BG3 weapon mod.
+description: Capture and apply concise, verified lessons for Baldur's Gate 3 original-weapon mods, especially root templates, Script Extender grants, package layout, appearance reuse, live resource lookup, and inventory verification. Use when creating, debugging, or documenting a BG3 weapon mod.
 ---
 
 # BG3 Weapon Mod Lessons
@@ -17,21 +17,22 @@ Keep only concrete, reusable findings from BG3 weapon-mod work. Prefer a tested 
 - Keep `modsettings.lsx` MD5 values attached to the matching module node; do not replace another mod's hash.
 - Vanilla `MAG_Sarevok_OfChaos_Greatsword_Leeching_Passive` is a stable fixed-heal donor: `OnDamage`, `AttackedWithPassiveSourceWeapon() and not Item()`, and `RegainHitPoints(SELF, 1d6)`.
 
-## Weapon index workflow
+## Reference sources and lookup workflow
 
-- Treat the BG3 Script Extender API as the runtime source of truth: use `Ext.Stats.GetStats("Weapon")`/`Ext.Stats.Get(name)` for weapon stats and `Ext.Template.GetAllRootTemplates()`/`Ext.Template.GetRootTemplate(uuid)` for root, icon, parent, and visual-template data. Export scans with `Ext.IO.SaveFile` and `Ext.DumpExport`.
-- Use [references/bg3-weapon-index.json](references/bg3-weapon-index.json) as a small, curated cache of known-good roots and appearance donors. An absent entry is not proof that the game lacks the weapon.
-- Keep reusable vanilla effect IDs and their short roles in `references/bg3-weapon-index.json`; do not grow this Markdown file into a catalogue of every weapon or passive.
-- Keep full generated dumps outside the skill (for example `BG3DataCache/weapon-index-<game-build>.json`) so the skill stays portable and fast to load.
-- Refresh the cache only after a game/Script Extender update or relevant `.pak` hash change. Before packaging, re-query the live API and compare `Name`, `Stats`, `Icon`, `VisualTemplate`, and `ParentTemplateId`; then verify the real server inventory.
+- Use current local game/Toolkit data as the source of truth for exact `RootTemplate`, `Stats`, `Icon`, `VisualTemplate`, and `ParentTemplateId` values.
+- Use the BG3 Script Extender API at runtime: `Ext.Stats.GetStats("Weapon")`/`Ext.Stats.Get(name)` for weapon stats and `Ext.Template.GetAllRootTemplates()`/`Ext.Template.GetRootTemplate(uuid)` for templates. Export temporary scans with `Ext.IO.SaveFile` and `Ext.DumpExport`.
+- Use the [official BG3 Modding documentation](https://docs.baldursgate3.game/index.php?title=Main_Page) for Toolkit workflows.
+- Use the community [BG3 Wiki weapon pages](https://bg3.wiki/wiki/Weapon), [modding hub](https://bg3.wiki/wiki/Modding%3AIndex), and [modding resources](https://bg3.wiki/wiki/Modding_Resources) for human-readable references and tool discovery.
+- Use the [BG3 Script Extender API documentation](https://github.com/Norbyte/bg3se/blob/main/Docs/API.md) for runtime API details.
+- Do not maintain a hand-curated full weapon JSON in the skill. Keep large generated dumps outside the skill and regenerate them from the current game build only when needed.
 
 ## Current case
 
 - The working weapon is `da292a90-af3a-4b82-a881-d09ccb9dbbe7` (`ZGLN_ZhugeRepeatingCrossbow`).
 - A compiled root template plus the corrected package layout fixed loading.
 - Direct inventory verification found one real item after a qualified `TemplateAddTo` call; the earlier rescue log alone was insufficient.
-- The first reusable index seed records generic and Gortash heavy-crossbow roots; the Gortash visual is a donor, not a gameplay-stat dependency.
-- Vanilla stealth/assassination effect IDs are kept in the index as short, searchable pattern records; re-query them after a game patch.
+- The Gortash heavy-crossbow visual is an appearance donor, not a gameplay-stat dependency; re-query donor data after a game patch.
+- Search vanilla stealth/assassination effect IDs in current game data and re-query them after a game patch.
 - When dynamic `DamageDone` healing behaves inconsistently in a weapon passive, prefer the tested vanilla fixed-heal pattern above for the real-HP portion and keep any overflow/temp-HP logic separate.
 
 ## Extension rule
