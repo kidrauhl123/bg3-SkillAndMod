@@ -4,7 +4,7 @@ A small Baldur's Gate 3 project containing two original weapons and a concise re
 
 ## Contents
 
-- `mod/神秘东方武器.pak` — ready-to-install release package.
+- `mod/MysticOrientalWeapons.pak` — ready-to-install release package.
 - `skill/` — the `bg3-weapon-mod-lessons` skill and its compact reusable weapon index.
 
 ## Weapons
@@ -32,7 +32,7 @@ The native weapon stats remain in the package even without Script Extender; only
 
 ## Install
 
-1. Copy `mod/神秘东方武器.pak` to the game's `Mods` directory.
+1. Copy `mod/MysticOrientalWeapons.pak` to the game's `Mods` directory.
 2. Enable the module in the game's mod manager or BG3 Mod Manager.
 3. Start or load a session as the host. The extender grants one copy of each item to the host inventory.
 
