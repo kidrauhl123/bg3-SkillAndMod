@@ -1,5 +1,0 @@
-{
-  "RequiredVersion": 30,
-  "ModTable": "ZhugeRepeatingCrossbow",
-  "FeatureFlags": ["Lua"]
-}

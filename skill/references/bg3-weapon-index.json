@@ -142,8 +142,6 @@
       ],
       "customMechanics": [
         "OnDamage fixed 1d6 actual healing using the vanilla Sword of Chaos pattern",
-        "RegainTemporaryHitPoints(DamageDone/2) when full",
-        "temporary-hit-point maximum 10 + 2*Level",
         "any equipped-wielder killing blow grants 2-turn invisibility; no per-turn limit"
       ],
       "role": ["current-case", "appearance-reuse", "vanilla-assassin-combination"]
