@@ -1,41 +1,26 @@
 # bg3-SkillAndMod
 
-A small Baldur's Gate 3 project containing two original weapons and a concise reusable skill for verified BG3 weapon-modding lessons.
+博德之门 3 自制 Mod 与配套开发 skill。每个 Mod 都独立放在 `mod/` 下的同名文件夹中，方便以后继续添加新的作品。
 
-## Contents
+## 当前 Mod
 
-- `mod/MysticOrientalWeapons.pak` — ready-to-install release package.
-- `skill/` — the `bg3-weapon-mod-lessons` skill and its compact reusable weapon index.
+- [`mod/MysticOrientalWeapons/`](mod/MysticOrientalWeapons/)：神秘东方武器
+- [`skill/`](skill/)：BG3 武器 Mod 制作经验与可复用武器索引
 
-## Weapons
+## 目录约定
 
-### Zhuge Repeating Crossbow
+```text
+mod/
+└─ ModName/
+   ├─ ModName.pak
+   └─ README.md
+skill/
+```
 
-- 20 m ranged weapon with a reused heavy-crossbow appearance.
-- Level scaling: enchantment +1/+2/+3 at levels 4/7/10, plus level-based first-hit piercing damage.
-- Bonus-action Mechanical Volley, once per turn.
-- A hostile killing blow grants a free follow-up shot; stacks are not limited per turn.
+新增 Mod 时，在 `mod/` 下新建一个以 Mod 名称命名的文件夹，放入对应的 `.pak` 和中文 `README.md` 即可。
 
-### Sha Bi
+## 安装
 
-- Level-scaling assassin dagger using a reused vanilla dagger appearance.
-- First melee hit each turn adds piercing damage equal to the wielder's level.
-- Weapon damage triggers a fixed `1d6` actual-HP heal using the vanilla Sword of Chaos pattern.
-- Killing blows while the dagger is equipped grant 2 turns of Invisibility, without a per-turn limit.
+进入目标 Mod 文件夹，把其中的 `.pak` 复制到《博德之门 3》的 `Mods` 目录，然后在游戏 Mod 管理器或 BG3 Mod Manager 中启用。
 
-## Requirements
-
-- Baldur's Gate 3.
-- BG3 Script Extender v30 or newer for the automatic inventory grant.
-
-The native weapon stats remain in the package even without Script Extender; only the automatic grant needs the extender. Existing saves receive one copy of each item in the host inventory after the session loads.
-
-## Install
-
-1. Copy `mod/MysticOrientalWeapons.pak` to the game's `Mods` directory.
-2. Enable the module in the game's mod manager or BG3 Mod Manager.
-3. Start or load a session as the host. The extender grants one copy of each item to the host inventory.
-
-The public repository intentionally contains the installable package and the skill, not generated extraction data or build caches. The editable package source is kept locally for continued development.
-
-No reuse license has been selected yet.
+本仓库只公开可直接安装的 pak 和 skill，不包含存档、日志、完整解包数据或机器专用缓存。可编辑的 Mod 源码保存在本机开发目录中。
