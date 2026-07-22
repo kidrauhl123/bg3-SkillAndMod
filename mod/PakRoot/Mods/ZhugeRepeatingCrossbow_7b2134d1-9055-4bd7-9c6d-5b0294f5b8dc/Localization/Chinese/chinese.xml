@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contentList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <content contentuid="h6b96fa71g1d7cg48eagbd7dgf1af2c21ded4" version="1">&#x8BF8;&#x845B;&#x8FDE;&#x5F29;</content>
+    <content contentuid="h5e36bacegbf70g4e49g9681gf8e102b44698" version="1">Intricate mechanisms mesh with an enchanted bow-arm. The more seasoned its wielder becomes, the keener the weapon grows.</content>
+    <content contentuid="h64a448f8ge2b3g452fg91fdg22458f7e6087" version="1">Growing Mechanism</content>
+    <content contentuid="h74b2d28fg3b8cg49cbg8905g2bf34097bdd4" version="1">The enchantment increases with the wielder's level: +1 at level 4, +2 at level 7, and +3 at level 10. The first hit each turn deals additional Piercing damage equal to the wielder's level.</content>
+    <content contentuid="h4c2a32d5gea2bg4065ga54eg71cb99cfa7ea" version="1">Mechanical Volley</content>
+    <content contentuid="h9077a634g531bg4ccfgbf78g8457a91c6114" version="1">Spend a Bonus Action to make a normal shot with the Zhuge Repeating Crossbow. Once per turn.</content>
+    <content contentuid="h6fb833c7g00d6g4d4fg946bgca266f7053ac" version="1">Kill-Chain Mechanism</content>
+    <content contentuid="h94c0a64fg2ea1g41e3g9cc1g516950257061" version="1">When a shot from this weapon kills a hostile character, gain 1 Follow-Up stack. Each stack grants one free normal shot, which can trigger this effect again.</content>
+    <content contentuid="hd11ec916g32d8g401cga19ag7a4bb69e8bfd" version="1">Follow-Up Shot</content>
+    <content contentuid="hf409ba61g8fc6g4d74g9f46g6ea1cacdc3fe" version="1">Consume 1 Follow-Up stack to make a free normal shot with the Zhuge Repeating Crossbow.</content>
+    <content contentuid="h08bcbc4fgdd04g4317g9b89g78eef2c8955a" version="1">Follow-Up Ready</content>
+    <content contentuid="hab56ba2eg02e4g4611gb0e6gf43820362f5e" version="1">Each stack grants one free Follow-Up Shot. All stacks are cleared when combat ends, the wielder is incapacitated, or the crossbow is unequipped.</content>
+    <content contentuid="hc5796d3dg6e8fg4001g84abg8d47eeeff470" version="1">&#x5565;&#x5315;</content>
+    <content contentuid="h1ac782b3gb32dg471eg9fb1g501c70a0e4ca" version="1">&#x968F;&#x7B49;&#x7EA7;&#x6210;&#x957F;&#x7684;&#x523A;&#x5BA2;&#x5315;&#x9996;&#x3002;</content>
+    <content contentuid="hc15b6dfega694g4194gb807g74ce62538876" version="1">&#x6DEC;&#x70BC;&#x4E4B;&#x5203;</content>
+    <content contentuid="h7cd084e5g18a7g4f76gb2a1g19bf411e1816" version="1">&#x6BCF;&#x56DE;&#x5408;&#x9996;&#x6B21;&#x547D;&#x4E2D;&#xFF1A;&#x989D;&#x5916;&#x9020;&#x6210;&#x7B49;&#x540C;&#x4E8E;&#x7B49;&#x7EA7;&#x7684;&#x7A7F;&#x523A;&#x4F24;&#x5BB3;&#xFF1B;4/7/10&#x7EA7;&#x9644;&#x9B54;+1/+2/+3&#x3002;</content>
+    <content contentuid="h4802bb5cg8437g4cb6ga35eg468f548089af" version="1">&#x653E;&#x8840;</content>
+    <content contentuid="h5c7a5962g3754g4072gacd1g6c65e85282bc" version="1">&#x6B64;&#x5315;&#x9996;&#x9020;&#x6210;&#x4F24;&#x5BB3;&#x65F6;&#xFF0C;&#x56DE;&#x590D;1d6&#x70B9;&#x751F;&#x547D;&#x3002;&#x6EE1;&#x8840;&#x65F6;&#xFF0C;&#x83B7;&#x5F97;&#x7B49;&#x4E8E;&#x4F24;&#x5BB3;&#x4E00;&#x534A;&#x7684;&#x4E34;&#x65F6;&#x751F;&#x547D;&#xFF0C;&#x4E0A;&#x9650;&#x4E3A;10+2&#x00D7;&#x7B49;&#x7EA7;&#xFF0C;&#x6301;&#x7EED;&#x81F3;&#x957F;&#x4F11;&#x3002;</content>
+    <content contentuid="hf57ba50eg59fbg4581gb202g4af079fcef8d" version="1">&#x8840;&#x76FE;</content>
+    <content contentuid="h79d1c4fbgd2bfg4609g8f8bg748b843aa100" version="1">&#x5438;&#x8840;&#x83B7;&#x5F97;&#x7684;&#x4E34;&#x65F6;&#x751F;&#x547D;&#x4E0A;&#x9650;&#xFF1A;10+2&#x00D7;&#x7B49;&#x7EA7;&#x3002;</content>
+    <content contentuid="h3b7d9a2eg4c1fg48a9g8d2g6e5f0c7b1a93d" version="1">&#x6740;&#x610F;&#x9041;&#x5F71;</content>
+    <content contentuid="h5e2c8f1ag7d4g46b8g1c9g3f0a6e2d5b947" version="1">&#x88C5;&#x5907;&#x65F6;&#xFF1A;&#x4EFB;&#x610F;&#x51FB;&#x6740;&#x83B7;&#x5F97;2&#x56DE;&#x5408;&#x9690;&#x8EAB;&#xFF0C;&#x4E0D;&#x9650;&#x6B21;&#x6570;&#x3002;</content>
+</contentList>

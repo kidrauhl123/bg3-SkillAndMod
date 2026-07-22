@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="8" revision="0" build="400"/>
+    <region id="Templates">
+        <node id="Templates">
+            <children>
+                <node id="GameObjects">
+                    <attribute id="Description" type="TranslatedString" handle="h1ac782b3gb32dg471eg9fb1g501c70a0e4ca" version="1"/>
+                    <attribute id="DisplayName" type="TranslatedString" handle="hc5796d3dg6e8fg4001g84abg8d47eeeff470" version="1"/>
+                    <attribute id="EquipmentTypeID" type="guid" value="2d85d633-d496-44a1-a643-0e95ef879a6d"/>
+                    <attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Dagger_Orin_A"/>
+                    <attribute id="IsInspector" type="bool" value="True"/>
+                    <attribute id="LevelName" type="FixedString" value=""/>
+                    <attribute id="LevelOverride" type="int32" value="-1"/>
+                    <attribute id="MapKey" type="FixedString" value="66b59457-e857-4760-9105-75c0befe0b73"/>
+                    <attribute id="Name" type="LSString" value="ZGLN_WhatDagger"/>
+                    <attribute id="ParentTemplateId" type="FixedString" value="c68026c8-8af9-4a05-b77a-246a01bafe61"/>
+                    <attribute id="Stats" type="FixedString" value="WPN_ZGLN_WhatDagger"/>
+                    <attribute id="Tooltip" type="uint8" value="2"/>
+                    <attribute id="Type" type="FixedString" value="item"/>
+                    <attribute id="VisualTemplate" type="FixedString" value="f67bf9d2-2bd7-4d3f-5723-6e41f8e0ee3f"/>
+                    <attribute id="WalkThrough" type="bool" value="True"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

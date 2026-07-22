@@ -1,0 +1,16 @@
+# Local build and inspection output
+BG3DataCache/
+build/
+dist-work/
+*.log
+*.dmp
+*.lsv
+
+# Local game/save files
+Saves/
+PlayerProfiles/
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
+.vscode/

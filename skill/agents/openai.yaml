@@ -1,0 +1,4 @@
+interface:
+  display_name: "BG3 Weapon Mod Lessons"
+  short_description: "Track concise BG3 weapon-modding lessons"
+  default_prompt: "Use $bg3-weapon-mod-lessons to apply the verified lessons when creating or debugging a BG3 weapon mod."
