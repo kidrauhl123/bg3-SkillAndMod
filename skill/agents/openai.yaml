@@ -1,4 +1,4 @@
 interface:
-  display_name: "BG3 Weapon Mod Lessons"
-  short_description: "Track concise BG3 weapon-modding lessons"
-  default_prompt: "Use $bg3-weapon-mod-lessons to apply the verified lessons when creating or debugging a BG3 weapon mod."
+  display_name: "BG3 Mod Lessons"
+  short_description: "Build and debug reliable BG3 mods"
+  default_prompt: "Use $bg3-mod-lessons to build or debug this Baldur's Gate 3 mod with verified item, Script Extender, and controllable-summon patterns."
