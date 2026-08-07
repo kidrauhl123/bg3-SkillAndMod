@@ -21,6 +21,6 @@
 
 ## 安装
 
-将 `MysticOrientalWeapons.pak` 复制到《博德之门 3》的 `Mods` 目录，并在 Mod 管理器中启用。
+将 `MysticOrientalWeapons.pak` 复制到《博德之门 3》的 `Mods` 目录，并在 Mod 管理器中启用。本 Mod 不依赖 `Mystra's Spells`、`PolyamoryFixes` 等其他第三方 Mod。
 
-BG3 Script Extender v30 或更新版本只用于自动把武器添加到主机背包；没有 Script Extender 时，武器本体数据仍在包内，但需要用其他方式获取物品。
+BG3 Script Extender v30 或更新版本用于在进入游戏后自动把武器添加到主机背包；没有 Script Extender 时，武器本体数据仍在包内，但需要用其他方式获取物品。
