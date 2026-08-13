@@ -31,6 +31,7 @@ Read [references/summon-presets.md](references/summon-presets.md) before impleme
 - Summon the mapped character RootTemplate directly. Do not spawn a naked NPC/bear shell and transform it afterward.
 - Pre-generate summon child stats at build time. Runtime-created children repeatedly produced empty or nonfunctional linked menus; static children were reliable.
 - Grant only the parent container spell. Set its `ContainerSpells` to captured children, call `stat:Sync()`, then re-grant the parent when rebuilding.
+- Keep every `ContainerSpells` page at 2047 characters or fewer. With 45-character mapped spell IDs, use at most 40 children per page and preserve the full capture list outside the visible page.
 - Convert level-local/placed NPC templates into independent package RootTemplates and maintain a source UUID to summon UUID map.
 - Use a unique summon stack ID per source template to allow multiple distinct summons.
 - Bind the engine-created summon through a marker status, then apply instance-only state such as display name, faction, copied spells/passives, and permanent boosts.

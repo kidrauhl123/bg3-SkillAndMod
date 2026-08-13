@@ -9,7 +9,7 @@ The working design follows the vanilla summon path from the beginning:
 1. Capture a dead character's source RootTemplate UUID, display name, representative spell icon, and a filtered combat snapshot.
 2. Resolve the source UUID to an independently summonable package RootTemplate.
 3. Select a build-time-authored child spell for that source UUID.
-4. Add that child to a linked `Target` parent spell's `ContainerSpells` and call `stat:Sync()`.
+4. Add that child to a linked `Target` parent spell's current page of `ContainerSpells` and call `stat:Sync()`.
 5. Grant only the parent spell to the player.
 6. Let `GROUND:Summon(...)` create the mapped character template directly as the controlled summon.
 7. On the summon marker status, bind the new entity to its capture record and apply instance-only data.
@@ -34,6 +34,8 @@ Runtime-created or repeatedly mutated child spell stats appeared as duplicate ic
 - the parent container's `ContainerSpells`;
 - a child's atlas-backed `Icon`, followed by `stat:Sync()`;
 - capture records and summon instance state.
+
+`ContainerSpells` is a `FixedString` and cannot exceed 2047 characters. The verified `Target_SK_NG_<32 hex characters>` identifiers are 45 characters each: 44 children plus separators use 2023 characters, while 45 use 2069 and make the entire native submenu empty. Page the parent container at 40 children or fewer, synchronize it, and re-grant the parent after changing pages. Keep all capture records persistent; pagination must only select the visible slice.
 
 The verified catalog contains:
 
@@ -111,6 +113,7 @@ Do not copy dialogue, trade, quest identity, temporary harmful statuses, progres
 | Naked idle human/NPC | Created an ordinary entity outside the summon functor | Use `GROUND:Summon` with a mapped RootTemplate |
 | A bear appears | Donor summon still points at the bear template | Generate a child whose `Summon` argument is the mapped NPC root |
 | Empty or inert submenu | Runtime child stats were not stable UI resources | Pre-generate every child and mutate only `ContainerSpells` |
+| Entire submenu becomes empty at the 45th mapped capture | The joined `ContainerSpells` value crossed the 2047-character `FixedString` limit (2023 characters at 44, 2069 at 45) | Page the static children at 40 per page, sync the selected slice, and re-grant the parent without deleting capture records |
 | Duplicate top-level buttons | Child spells were granted directly | Grant only the linked parent |
 | Question-mark icons | Character portrait keys are not spell-atlas icons | Use a valid icon from an NPC spell/action, with Find Familiar as fallback |
 | A captured NPC is absent | Its source is level-local or has no viable mapping | Generate and compile an independent package RootTemplate |
