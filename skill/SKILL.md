@@ -30,8 +30,8 @@ Read [references/summon-presets.md](references/summon-presets.md) before impleme
 - Build the action like vanilla Find Familiar/Ranger's Companion: a linked `Target` parent, static `Target` children, and `GROUND:Summon(...)`.
 - Summon the mapped character RootTemplate directly. Do not spawn a naked NPC/bear shell and transform it afterward.
 - Pre-generate summon child stats at build time. Runtime-created children repeatedly produced empty or nonfunctional linked menus; static children were reliable.
-- Grant only the parent container spell. Set its `ContainerSpells` to captured children, call `stat:Sync()`, then re-grant the parent when rebuilding.
-- Keep every `ContainerSpells` page at 2047 characters or fewer. With 45-character mapped spell IDs, use at most 40 children per page and preserve the full capture list outside the visible page.
+- Grant only build-time-authored top-level container spells. Keep up to 44 captured children under the first parent; at child 45, grant a second independent parent for children 45-88, then another parent per 44-child slice. Sync the changed static parents and child `SpellContainerID` values, then re-grant each active parent when rebuilding.
+- Keep every `ContainerSpells` value at 2047 characters or fewer. With 45-character mapped spell IDs, 44 children use 2023 characters and 45 use 2069. Do not nest linked containers: the engine can synchronize that hierarchy, but the stock UI did not open it in testing. Use multiple independent two-level parents instead.
 - Convert level-local/placed NPC templates into independent package RootTemplates and maintain a source UUID to summon UUID map.
 - Use a unique summon stack ID per source template to allow multiple distinct summons.
 - Bind the engine-created summon through a marker status, then apply instance-only state such as display name, faction, copied spells/passives, and permanent boosts.

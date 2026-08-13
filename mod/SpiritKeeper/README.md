@@ -3,7 +3,7 @@
 精灵球可以收纳已经死亡且可处理的 NPC，并把已收纳目标召唤为可操控随从。
 
 - 使用“收纳尸体”记录目标；成功后原尸体会消失。
-- 使用“召唤精灵”打开动态子菜单；菜单只列出当前存档中已经收纳的有效目标，每页最多显示 40 个。
+- 使用“召唤精灵”打开动态子菜单；第一个按钮容纳 1-44，第 45 个目标会自动新增独立的“召唤精灵 45-88”按钮。
 - 召唤物会加入头像栏，可独立移动和参加战斗，并保留对应模板的外观与基础数值。
 - 当前包预生成了 4154 个静态召唤条目和模板映射；Script Extender 负责捕获记录、菜单更新、存档恢复和召唤物绑定。
 
@@ -126,7 +126,7 @@ Tools → Download & Extract the Script Extender
 4. 收纳成功后，使用“召唤精灵”打开已捕获目标列表。
 5. 选择目标，再选择可站立的地面位置进行召唤。
 
-精灵球菜单不会一次显示全部 4154 个预设，只会显示这个存档中已经成功收纳的目标。收纳超过 40 个有效目标后，角色会同时获得“上一页”和“下一页”两个无消耗技能：先用它们切换分组，再打开“召唤精灵”。每页最多 40 个，翻页不会删除或覆盖任何收纳记录；新收纳的目标会自动切换到最后一页。
+精灵球菜单不会一次显示全部 4154 个预设，只会显示这个存档中已经成功收纳的目标。第一个“召唤精灵”按钮直接列出第 1-44 个有效目标；收纳第 45 个后，角色会新增独立的“召唤精灵 45-88”按钮，第 89 个后再新增“召唤精灵 89-132”，依此类推。每个按钮下面直接显示具体精灵，始终是原生二级菜单。按钮之间互不嵌套，也不会删除、覆盖或截断任何收纳记录。
 
 > [!WARNING]
 > 收纳成功后原尸体会消失。请先完成搜刮、死者交谈以及其他尸体相关交互，再进行收纳。
@@ -152,10 +152,10 @@ Loading bootstrap script: Mods/SpiritKeeper_.../ScriptExtender/Lua/BootstrapServ
 non-global mappings=3901; global mappings=253
 ```
 
-收纳超过 40 个目标时，日志还应显示当前召唤菜单分页，例如：
+收纳达到 45 个目标时，日志还应显示召唤列表已拆为两个独立按钮，例如：
 
 ```text
-[SK] Synced official summon container page=1/2; children=40; total=45; characters=1839
+[SK] Synced split summon menus; menus=2; children=45; maxMenuCharacters=2023
 ```
 
 ## 更新 Mod
@@ -237,8 +237,8 @@ non-global mappings=3901; global mappings=253
 
 - 尚未成功收纳目标时，列表为空是正常现象。
 - 检查捕获后是否出现成功反馈、尸体是否消失。
-- 如果存档已经收纳 45 个或更多目标，请确认使用的是包含分页修复的最新版 PAK；旧版会因原生菜单字符串超过 2047 字符而把整个菜单显示为空。
-- 新版在超过 40 个有效目标后会提供“上一页”和“下一页”，每次只把当前页同步到“召唤精灵”。
+- 如果存档已经收纳 45 个或更多目标，请确认使用的是包含多按钮修复的最新版 PAK；旧版会因原生菜单字符串超过 2047 字符而把整个菜单显示为空。
+- 新版从第 45 个有效目标开始新增“召唤精灵 45-88”独立按钮；原来的“召唤精灵”仍管理第 1-44 个目标，不会出现翻页技能或三级子菜单。
 - 查看 Script Extender 日志中是否有 `[SK]` 错误。
 
 ### 更新后游戏无法启动或存档无法加载
@@ -276,6 +276,6 @@ Spirit Ball is a third-party PC mod and requires **BG3 Script Extender v30+**.
 6. Move `Spirit Ball` to the active list and use **File → Export Order to Game**.
 7. Load a save. The orb is granted to the host character after entering gameplay.
 
-The native summon menu displays up to 40 captured spirits per page. After the 40th valid capture, use the no-cost **Previous Page** and **Next Page** actions before opening **Summon Spirits**. Pagination preserves every capture record and keeps the native `ContainerSpells` value below its 2047-character limit.
+The first 44 valid captures remain under the original **Summon Spirits** button. Capture 45 adds an independent **Summon Spirits 45-88** button; capture 89 adds another button for 89-132, and so on. Every button opens its spirits directly as a native two-level linked menu. Each `ContainerSpells` value stays below 2047 characters, and no capture record is deleted or truncated.
 
 All multiplayer participants should use the same game version, PAK version, Script Extender version, and mod load order. Back up important saves before updating or removing the mod.
